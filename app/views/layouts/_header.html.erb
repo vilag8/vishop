@@ -1,4 +1,4 @@
-    <header class="navbar-fixed">
+<header class="navbar-fixed">
           <nav class="#455a64 blue-grey darken-2">
             <div class="container nav-wrapper">
               <%= link_to "ViShop", root_path, class: "brand-logo" %>
@@ -9,17 +9,26 @@
                     <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                 <% else %>   
                     <li><%= link_to "Log in", new_user_session_path %></li>
-                    <li><%= link_to "Registrati", new_user_password_path %></li>
+                    <li><%= link_to "Registrati", new_user_registration_path %></li>
                 <%end%>
               </ul>
             </div>
           </nav>
-          <ul class="sidenav" id="mobile-demo">
-                <% if user_signed_in? %>
-                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-                <% else %>   
-                    <li><%= link_to "Log in", new_user_session_path %></li>
-                    <li><%= link_to "Registrati", new_user_password_path %></li>
-                <%end%>
-          </ul>
-    </header>
+</header>
+
+<ul class="sidenav" id="mobile-demo">
+            <li><%=link_to "About", about_path%></li>
+        <% if user_signed_in? %>
+            <li><%= link_to "Impostazioni",  edit_user_registration_path %></li>
+            <li><%=link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%=link_to "Log In", new_user_session_path %></li>
+            <li><%=link_to "Registrati", new_user_registration_path %></li>
+          <% end %>    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+          <li><%= link_to "Impostazioni",  edit_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%=link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+</ul>  
