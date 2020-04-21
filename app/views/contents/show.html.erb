@@ -15,5 +15,7 @@
   <%= @content.price %>
 </p>
 
-<%= link_to 'Modifica', edit_content_path(@content) %> |
+<%if @content.user == current_user%>
+  <%= link_to 'Modifica', edit_content_path(@content) %> |
+<%end%>
 <%= link_to 'Indietro', contents_path %>
