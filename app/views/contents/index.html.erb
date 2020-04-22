@@ -15,10 +15,10 @@
               <div class="center"><%= number_to_currency(content.price)%></div>
             </div>
             <br>
-             <div class="center"><%= link_to 'Scopri di più', content, class: "btn" %></div>
+             <div class="center"><%= link_to 'Scopri di più', content, class: "btn waves-effect waves-light btn #ff5722 deep-orange" %></div>
             <%if content.user == current_user%>
             <br>
-            <div class="center"><p><%= link_to 'Modifica', edit_content_path(content) %>
+            <div class="center"><p><%= link_to 'Modifica', edit_content_path(content) %> |
               <%= link_to 'Cancella', content, method: :delete, data: { confirm: 'Vuoi cancellare davvero?' } %></p>
             </div>
             <%end%>

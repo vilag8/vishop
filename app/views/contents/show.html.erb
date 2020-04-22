@@ -7,6 +7,12 @@
           <strong>Venduto da:</strong>
           <%= @content.user.name %>
         </p>
+
+        <%if @content.user == current_user%>
+          <%= link_to 'Modifica', edit_content_path(@content) %> |
+        <%end%>
+        <%= link_to 'Indietro', contents_path %>
+
     </div>
     
     <div class="col l6">
@@ -23,8 +29,3 @@
         <h4 class="show-prezzo"><strong>Prezzo: </strong><%= number_to_currency(@content.price) %></h4>
     </div>
 </div>
-
-<%if @content.user == current_user%>
-  <%= link_to 'Modifica', edit_content_path(@content) %> |
-<%end%>
-<%= link_to 'Indietro', contents_path %>
