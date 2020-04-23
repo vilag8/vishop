@@ -20,6 +20,9 @@ gem 'devise'
 gem "paperclip", "~> 6.0.0"
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-materialize', git: 'https://github.com/mldoscar/will_paginate-materialize', branch: 'master'
+gem 'friendly_id'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
