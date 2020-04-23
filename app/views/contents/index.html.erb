@@ -2,7 +2,7 @@
 
 <div class="row">
   <% @contents.each do |content| %>
-    <div class="col s3">
+    <div class="col s3 hoverable">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <%= image_tag content.cover.url, class: "activator" %>
@@ -15,7 +15,7 @@
               <div class="center"><%= number_to_currency(content.price)%></div>
             </div>
             <br>
-             <div class="center"><%= link_to 'Scopri di più', content, class: "btn waves-effect waves-light btn #ff5722 deep-orange" %></div>
+             <div class="center"><%= link_to 'Scopri di più', content, class: "btn waves-effect waves-light btn #ff5722 deep-orange hoverable" %></div>
             <%if content.user == current_user%>
             <br>
             <div class="center"><p><%= link_to 'Modifica', edit_content_path(content) %> |
@@ -30,4 +30,8 @@
       </div>
     </div>
   <%end%>
+</div>
+
+<div class="center">
+  <%= will_paginate @contents %>
 </div>
