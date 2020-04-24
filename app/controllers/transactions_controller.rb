@@ -1,17 +1,16 @@
-class TransactionController < ApplicationController
+class TransactionsController < ApplicationController
   
     def create
-        content = Content.find_by!(slug: params [:slug])
+        content = Content.find_by!(slug: params[:slug])
         token = params[:stripeToken]
 
         begin
             
-            charge = Stripe::Charge.create({
-            card: => token,
-            amount: content.price,
-            description: current_user.email,
-            currency: 'eur',
-            })
+            charge = Stripe::Charge.create(
+            :card => token,
+            :amount => (content.price * 100).floor,
+            :currency => 'eur',
+            )
             
             @sale = content.sales.create!(email_acquirente: current_user.email)
             redirect_to pickup_url(guide: @sale.guide)

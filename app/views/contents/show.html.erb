@@ -27,6 +27,18 @@
         <br>
 
         <h4 class="show-prezzo"><strong>Prezzo: </strong><%= number_to_currency(@content.price) %></h4>
+        
+        <%= form_tag compra_path(slug: @content.slug) do %>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="<%= @content.titolo %>"
+                  data-amount="<%= @content.price %>"
+                  data-name="ViShop"
+                  data-currency="eur"
+                  data-locale="auto">
+          </script>
+        <% end %>
+
     </div>
 </div>
 
