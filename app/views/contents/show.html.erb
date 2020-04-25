@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <div class="row">
     <div class="col l6">
@@ -27,17 +26,26 @@
         <br>
 
         <h4 class="show-prezzo"><strong>Prezzo: </strong><%= number_to_currency(@content.price) %></h4>
-        
+      
+
+      <% if current_user %>
+
         <%= form_tag compra_path(slug: @content.slug) do %>
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="<%= @content.titolo %>"
-                  data-amount="<%= @content.price %>"
+                  data-amount="<%= (@content.price * 100).floor %>"
                   data-name="ViShop"
                   data-currency="eur"
                   data-locale="auto">
           </script>
         <% end %>
+
+        <%else%>
+        <p>Fai <%= link_to "Log in", new_user_session_path %> 
+        o <%= link_to "Registrati", new_user_registration_path %> 
+        per acquistare questo articolo</p>
+        <%end%>
 
     </div>
 </div>

@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200423151508) do
+ActiveRecord::Schema.define(version: 20200425123351) do
 
   create_table "contents", force: :cascade do |t|
     t.string "titolo"
     t.text "descrizione"
-    t.string "price"
-    t.string "decimal"
+    t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -50,6 +49,11 @@ ActiveRecord::Schema.define(version: 20200423151508) do
     t.integer "content_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "stripe_id"
+    t.string "stripe_token"
+    t.text "error"
+    t.integer "amount"
   end
 
   create_table "users", force: :cascade do |t|

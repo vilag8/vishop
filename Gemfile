@@ -23,6 +23,9 @@ gem 'will_paginate-materialize', git: 'https://github.com/mldoscar/will_paginate
 gem 'friendly_id'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
+gem 'aasm'
+gem 'rails-i18n', '~> 5.1' 
+
 
 
 group :development, :test do
