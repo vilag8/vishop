@@ -14,12 +14,6 @@
             </div>
             <br>
              <div class="center"><%= link_to 'Scopri di più', content, class: "btn waves-effect waves-light btn #ff5722 deep-orange hoverable" %></div>
-            <%if content.user == current_user%>
-            <br>
-            <div class="center"><p><%= link_to 'Modifica', edit_content_path(content) %> |
-              <%= link_to 'Cancella', content, method: :delete, data: { confirm: 'Vuoi cancellare davvero?' } %></p>
-            </div>
-            <%end%>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">close</i></span>
