@@ -53,20 +53,10 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (9.7.6)
       execjs
-    aws-eventstream (1.1.0)
-    aws-sdk (2.11.494)
-      aws-sdk-resources (= 2.11.494)
-    aws-sdk-core (2.11.494)
-      aws-sigv4 (~> 1.0)
-      jmespath (~> 1.0)
-    aws-sdk-resources (2.11.494)
-      aws-sdk-core (= 2.11.494)
-    aws-sigv4 (1.1.2)
-      aws-eventstream (~> 1.0, >= 1.0.2)
     bcrypt (3.1.13)
     bindex (0.8.1)
     builder (3.2.4)
-    byebug (11.0.1)
+    byebug (11.1.3)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -97,6 +87,7 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
+    ffi (1.12.2-x64-mingw32)
     ffi (1.12.2-x86-mingw32)
     friendly_id (5.3.0)
       activerecord (>= 4.0.0)
@@ -106,7 +97,6 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
-    jmespath (1.4.0)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -117,12 +107,14 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2019.1009)
+    mime-types-data (3.2020.0425)
     mimemagic (0.3.4)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     nio4r (2.5.2)
+    nokogiri (1.10.9-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
@@ -132,6 +124,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
     public_suffix (4.0.4)
     puma (3.12.4)
@@ -173,10 +166,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    responders (2.4.1)
-      actionpack (>= 4.2.0, < 6.0)
-      railties (>= 4.2.0, < 6.0)
-    rubyzip (1.3.0)
+    responders (3.0.0)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+    rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -198,8 +191,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.3.13-x64-mingw32)
     sqlite3 (1.3.13-x86-mingw32)
-    stripe (5.18.0)
+    stripe (5.20.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.0.1)
@@ -210,7 +204,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2019.3)
+    tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -229,11 +223,11 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  x64-mingw32
   x86-mingw32
 
 DEPENDENCIES
   aasm
-  aws-sdk (~> 2.3)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
@@ -260,7 +254,7 @@ DEPENDENCIES
   will_paginate-materialize!
 
 RUBY VERSION
-   ruby 2.3.3p222
+   ruby 2.6.6p146
 
 BUNDLED WITH
    2.1.4
